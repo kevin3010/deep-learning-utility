@@ -29,5 +29,9 @@ def get_random_eraser(p=0.5, s_l=0.02, s_h=0.4, r_1=0.3, r_2=1/0.3, v_l=0, v_h=2
     return eraser
 
 image_generator = ImageDataGenerator(
+    width_shift_range=[-0.25,0.25],
+    height_shift_range=[-0.10,0.10],
+    zoom_range=[0.75,1.25],
+    horizontal_flip = True,
     preprocessing_function = get_random_eraser(v_l=-1, v_h=1,pixel_level=True)
 )
